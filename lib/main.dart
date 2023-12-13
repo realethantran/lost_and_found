@@ -27,7 +27,6 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Profile Picture
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
@@ -35,7 +34,6 @@ class MyHomePage extends StatelessWidget {
               backgroundImage: AssetImage('.dart_tool/assets/GitHub-Mark.png'),
             ),
           ),
-          // App Title
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
@@ -46,7 +44,6 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          // Search Bar
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
@@ -59,13 +56,21 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          // Image Slideshow
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.network(
+              'https://github.com/realethantran/lostAndFound/assets/109186517/3a0c81e6-49e2-44a1-a255-3c8a181eb6fd',
+              width: double.infinity,
+              height: 200,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Text('Image not available');
+              },
+            ),
+          ),
           Expanded(
             child: Container(
-              // Placeholder for your image slideshow
               color: Colors.grey,
-              child: // Implement your image slideshow widget here
-              null,
             ),
           ),
         ],
